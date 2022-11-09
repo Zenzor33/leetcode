@@ -16,9 +16,6 @@ let exceptionsArray = [
   { numeral: "CD", value: 400 },
   { numeral: "CM", value: 900 },
 ];
-let s = "V";
-let s2 = "LVIII";
-let s3 = "MCMXCIV";
 
 function appLogic(str) {
   sum = 0;
