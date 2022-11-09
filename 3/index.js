@@ -56,7 +56,6 @@ for (let i = 0; i < s3.length; i++) {
     }
   }
 }
-console.log(val);
 
 // Create a function that returns the numeric value of a roman numeral
 function valueOfNumeral(str) {
