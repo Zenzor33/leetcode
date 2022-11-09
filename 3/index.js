@@ -31,7 +31,10 @@ function valueOfNumeral(str) {
   let exception = null;
   if (str.length === 1) {
     for (let i = 0; i < rulesArr.length; i++) {
-      if (str === rulesArr[i].numeral) return rulesArr[i].value;
+      if (str === rulesArr[i].numeral) {
+        exception = false;
+        return { value: rulesArr[i].value, exception: exception };
+      }
     }
   } else {
     // check if str is exception
@@ -39,10 +42,13 @@ function valueOfNumeral(str) {
       // if str is exception
       if (str === exceptionsArray[i].numeral) {
         exception = true;
-        return exceptionsArray[i].value;
+        return { value: exceptionsArray[i].value, exception: exception };
       } else {
         for (let i = 0; i < rulesArr.length; i++) {
-          if (str === rulesArr[i].numeral) return rulesArr[i].value;
+          if (str === rulesArr[i].numeral) {
+            exception = false;
+            return { value: rulesArr[i].value, exception: exception };
+          }
         }
       }
     }
