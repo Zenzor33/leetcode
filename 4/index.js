@@ -18,7 +18,7 @@ Explanation: There is no common prefix among the input strings.
 // a = f,l,o,w
 // a = f,l
 
-strs = ["flower", "flow", "flight"];
+strs = ["dog", "racecar", "car"];
 
 var longestCommonPrefix = function (strs) {
   let counts = 0;
@@ -37,11 +37,11 @@ var longestCommonPrefix = function (strs) {
     let str2 = cv;
     for (let i = 0; i < str1.length; i++) {
       let str1Letter = str1[i];
-      for (let j = 0; j < str2.length; j++) {
-        let str2Letter = str2[j];
-        if (str1Letter === str2Letter) {
-          a += str2Letter;
-        }
+      let str2Letter = str2[i];
+      if (str1Letter === str2Letter) {
+        a += str1Letter;
+      } else {
+        return a;
       }
       // console.log(`a: ${a}, a.length: ${a.length} cv: ${cv}`);
       if (a.length === 0) {
